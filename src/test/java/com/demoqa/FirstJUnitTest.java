@@ -8,7 +8,6 @@ public class FirstJUnitTest {
     static void beforeAll() {
         System.out.println("#### beforeAll()");
     }
-
     @AfterAll
     static void afterAll() {
         System.out.println("#### afterAll()");
@@ -17,7 +16,6 @@ public class FirstJUnitTest {
     void beforeach() {
         System.out.println("   #### beforeach()");
 }
-
     @AfterEach
     void aftereach() {
         System.out.println("          #### aftereach()");
@@ -28,7 +26,6 @@ public class FirstJUnitTest {
        Assertions.assertTrue(3 > 2);
        System.out.println("       #### @Test firstTest()");
    }
-
     @Test
     void secondTest() {
         Assertions.assertTrue(3 > 2);
