@@ -9,17 +9,17 @@ import static com.codeborne.selenide.Selenide.open;
 public class TextBoxTests extends TestBase {
 
     @Test
-    void successfullFillTest() {
-        open("/text-box");
+    void successFillTest() {
+        open("https://demoqa.com/text-box");
  //     $("[id=userName]").setValue("Artem");
         $("#userName").setValue("Artem"); // - # это сокращение для id
         $("#userEmail").setValue("Fooolll@test.com");
-        $("#currentAddress").setValue("Penza");
+        $("#currentAddress").setValue("Pnz");
         $("#permanentAddress").setValue("Russia");
         $("#submit").click();
 
         $("#output").shouldHave(text("Artem"), text("Fooolll@test.com"),
-                text("Penza"), text("Russia"));
+                text("Pnz"), text("Russia"));
 
       //  $("#output #name").shouldHave(text("Artem"));
     }
