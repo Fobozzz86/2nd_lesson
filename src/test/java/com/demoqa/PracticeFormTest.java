@@ -16,6 +16,9 @@ public class PracticeFormTest extends TestBase {
        $("#userEmail").setValue("Fooolll@test.com");
        $("[for=gender-radio-1]").click();
        $("#userNumber").setValue("89649990000");
+       $("#dateOfBirthInput").sendKeys(Keys.chord(Keys.LEFT_CONTROL, "a")); // ввод даты в календарь
+       $("#dateOfBirthInput").sendKeys("1986 Apr 07");
+       $("#dateOfBirthInput").sendKeys(Keys.ENTER);
        $("#subjectsInput").setValue("Maths").sendKeys(Keys.ENTER);
        $("#subjectsInput").setValue("bio").sendKeys(Keys.ENTER);
        $("#subjectsInput").setValue("ch").sendKeys(Keys.ENTER);
@@ -23,7 +26,7 @@ public class PracticeFormTest extends TestBase {
        $("[for=hobbies-checkbox-2]").click();
        $("[for=hobbies-checkbox-3]").click();
    //    $("#uploadPicture").click();
-       $(".form-control-file").click();
+    //   $(".form-control-file").click();
      //  setValue("d:\Lanit\Test.jpg").sendKeys(Keys.ENTER);
 
        $("#currentAddress").setValue("Penza");
