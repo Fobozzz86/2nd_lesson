@@ -1,5 +1,6 @@
 package com.demoqa;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,7 +12,7 @@ public class TextBoxTests extends TestBase {
     @Test
     void successFillTest() {
         open("https://demoqa.com/text-box");
- //     $("[id=userName]").setValue("Artem");
+        //     $("[id=userName]").setValue("Artem");
         $("#userName").setValue("Artem"); // - # это сокращение для id
         $("#userEmail").setValue("Fooolll@test.com");
         $("#currentAddress").setValue("Pnz");

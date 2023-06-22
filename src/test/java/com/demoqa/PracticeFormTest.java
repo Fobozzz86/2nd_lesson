@@ -11,12 +11,14 @@ public class PracticeFormTest extends TestBase {
     @Test
     void vvoddataTest() {
         open("https://demoqa.com/automation-practice-form");
-     //   $("[placeholder=First Name]").setValue("Artem");
-        $(".form-control").shouldHave(text("First Name")).setValue("Artem");
+     //  $("[placeholder=First Name]").setValue("Artem");
+     //   $(".form-control").shouldHave(text("First Name")).setValue("Artem");
      //   $("[placeholder=Last Name]").setValue("Bulaev");
         $("#userEmail").setValue("Fooolll@test.com");
-     //   $("#currentAddress").setValue("Penza");
-     //   $("#permanentAddress").setValue("Russia");
+    //    $("[name=gender] [value=other]").click();
+        $("#userNumber").setValue("89649990000");
+        $("#currentAddress").setValue("Penza");
+        $("#subjectsWrapper").$("#subjectsContainer").setValue("Russia");
 
 
     }
