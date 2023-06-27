@@ -3,14 +3,15 @@ package com.demoqa;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormTest extends TestBase {
 
     @Test
-    void vvoddataTest() {
-        open("https://demoqa.com/automation-practice-form");
+    void PractFormTest() {
+       open("https://demoqa.com/automation-practice-form");
        $("#firstName").setValue("Artem");
        $("#lastName").setValue("Bulaev");
        $("#userEmail").setValue("Fooolll@test.com");
@@ -25,13 +26,16 @@ public class PracticeFormTest extends TestBase {
        $("[for=hobbies-checkbox-1]").click();
        $("[for=hobbies-checkbox-2]").click();
        $("[for=hobbies-checkbox-3]").click();
-   //    $("#uploadPicture").click();
-    //   $(".form-control-file").click();
-     //  setValue("d:\Lanit\Test.jpg").sendKeys(Keys.ENTER);
-
+  //   $(".form-file .form-file-label").click();  // открытие на загрузку файла
+       $("#uploadPicture").sendKeys("d:/Lanit/Test.jpg"); // загрузить файл
        $("#currentAddress").setValue("Penza");
-
-       // d:\Lanit\Test.jpg
+       $("#react-select-3-input").setValue("NCR").sendKeys(Keys.ENTER);
+  //     $(".indicatorContainer").setValue("NCR").sendKeys(Keys.ENTER);
+       $("#react-select-4-input").setValue("Delhi").sendKeys(Keys.ENTER);
+       $("#submit").click();
+       $(".table-hover").shouldHave(text("Artem Bulaev"), text("Fooolll@test.com"),
+               text("Male"), text("8964999000"));
+       $("[type=button]").sendKeys(Keys.ENTER);
 
     }
 }

@@ -9,7 +9,7 @@ public class TestBase {
       //  Configuration.baseUrl = "https://demoqa.com";
         Configuration.holdBrowserOpen = true;
       //  Configuration.browser = "Edge";
-        Configuration.browserSize = "1400x1080";
+        Configuration.browserSize = "400x800";
 
       //  Configuration.timeout = 30000;
         Configuration.pageLoadTimeout = 45000; // таймаут на загрузку страници
