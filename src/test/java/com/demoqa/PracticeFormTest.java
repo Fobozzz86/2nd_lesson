@@ -1,11 +1,12 @@
 package com.demoqa;
 
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest extends TestBase {
 
@@ -30,12 +31,11 @@ public class PracticeFormTest extends TestBase {
        $("#uploadPicture").sendKeys("d:/Lanit/Test.jpg"); // загрузить файл
        $("#currentAddress").setValue("Penza");
        $("#react-select-3-input").setValue("NCR").sendKeys(Keys.ENTER);
-  //     $(".indicatorContainer").setValue("NCR").sendKeys(Keys.ENTER);
        $("#react-select-4-input").setValue("Delhi").sendKeys(Keys.ENTER);
        $("#submit").click();
        $(".table-hover").shouldHave(text("Artem Bulaev"), text("Fooolll@test.com"),
                text("Male"), text("8964999000"));
-       $("[type=button]").sendKeys(Keys.ENTER);
+       $("#closeLargeModal").scrollIntoView(true).click(); // прокрутка для видимости кнопки
 
     }
 }
