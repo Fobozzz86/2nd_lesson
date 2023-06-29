@@ -19,6 +19,12 @@ public class PracticeFormTest extends TestBase {
        $("#dateOfBirthInput").sendKeys(Keys.chord(Keys.LEFT_CONTROL, "a")); // ввод даты в календарь
        $("#dateOfBirthInput").sendKeys("1986 Apr 07");
        $("#dateOfBirthInput").sendKeys(Keys.ENTER);
+
+ //      $("[id=dateOfBirthInput]").click();
+ //      $(".react-datepicker__month-select").setValue("3");
+ //      $(".react-datepicker__year-select").setValue("1990");
+ //      $(".react-datepicker__day--010").click();
+
        $("#subjectsInput").setValue("Maths").sendKeys(Keys.ENTER);
        $("#subjectsInput").setValue("bio").sendKeys(Keys.ENTER);
        $("#subjectsInput").setValue("ch").sendKeys(Keys.ENTER);
