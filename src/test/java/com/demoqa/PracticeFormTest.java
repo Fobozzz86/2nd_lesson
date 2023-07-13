@@ -3,6 +3,8 @@ package com.demoqa;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -31,15 +33,27 @@ public class PracticeFormTest extends TestBase {
        $("#subjectsInput").setValue("Maths").sendKeys(Keys.ENTER);
        $("#subjectsInput").setValue("bio").sendKeys(Keys.ENTER);
        $("#subjectsInput").setValue("ch").sendKeys(Keys.ENTER);
-       $("[for=hobbies-checkbox-1]").click();
+ //    $("[for=hobbies-checkbox-1]").click();
+       $("#hobbies-checkbox-1").parent().click(); // поднятие на элемент вверх от input'a и клик по нему
        $("[for=hobbies-checkbox-2]").click();
        $("[for=hobbies-checkbox-3]").click();
-  //   $(".form-file .form-file-label").click();  // открытие на загрузку файла
-       $("#uploadPicture").sendKeys("d:/Lanit/Test.jpg"); // загрузить файл
+
+  //   $("#uploadPicture").sendKeys("d:/Lanit/Test.jpg"); // загрузить файл_0
+  //   $("#uploadPicture").uploadFromClasspath("Test.jpg"); // загрузить файл_1 *оптимальный код*
+
+  //   String filePath = "Test.jpg";
+  //   $("#uploadPicture").uploadFromClasspath(filePath); // загрузить файл_2 *оптимальный код*
+
+  //    File file = new File("C:\\Users\\foboz\\IdeaProjects\\2nd_lesson\\src\\test\\resources\\Test.jpg"); // загрузить файл_3
+  //    при  таком написании Тест запустится только на машине где он создан
+
+       File file = new File("src/test/resources/Test.jpg");
+       $("#uploadPicture").uploadFile(file); // загрузить файл_4 *оптимальный код*
+
        $("#currentAddress").setValue("Penza");
        $("#react-select-3-input").setValue("NCR").sendKeys(Keys.ENTER);
        $("#react-select-4-input").setValue("Delhi").sendKeys(Keys.ENTER);
-       $("#submit").click();
+ //      $("#submit").click();
 
        // Выбираем состояние и город
  //      $("[id=state]").scrollTo().click();
