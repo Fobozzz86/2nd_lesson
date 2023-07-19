@@ -25,11 +25,13 @@ public class PracticeFormTest extends TestBase {
        $("#dateOfBirthInput").sendKeys("1986 Apr 07");
        $("#dateOfBirthInput").sendKeys(Keys.ENTER);
 
- //      $("[id=dateOfBirthInput]").click();
- //      $(".react-datepicker__month-select").setValue("3"); selectOption("April")
- //      $(".react-datepicker__year-select").setValue("1990"); selectOption("1990")
- //      $(".react-datepicker__day--010").click();
-
+ /*      // второй вариант выбора даты
+       $("[id=dateOfBirthInput]").click();
+       $(".react-datepicker__month-select").selectOption("March");
+ //      $(".react-datepicker__month-select").selectOptionByValue("5"); //выбор по Value
+       $(".react-datepicker__year-select").selectOption("1990");
+       $(".react-datepicker__day--010").click();
+*/
        $("#subjectsInput").setValue("Maths").sendKeys(Keys.ENTER);
        $("#subjectsInput").setValue("bio").sendKeys(Keys.ENTER);
        $("#subjectsInput").setValue("ch").sendKeys(Keys.ENTER);
@@ -53,13 +55,7 @@ public class PracticeFormTest extends TestBase {
        $("#currentAddress").setValue("Penza");
        $("#react-select-3-input").setValue("NCR").sendKeys(Keys.ENTER);
        $("#react-select-4-input").setValue("Delhi").sendKeys(Keys.ENTER);
- //      $("#submit").click();
-
-       // Выбираем состояние и город
- //      $("[id=state]").scrollTo().click();
- //      $("[id=react-select-3-option-2]").click();
- //      $("[id=city]").scrollTo().click();
- //      $("[id=react-select-4-option-1]").click();
+       $("#submit").click();
 
        $(".table-hover").shouldHave(text("Artem Bulaev"), text("Fooolll@test.com"),
                text("Male"), text("8964999000"));
