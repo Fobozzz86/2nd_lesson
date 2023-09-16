@@ -8,7 +8,7 @@ import java.io.File;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticeFormTestWithComments extends TestBase {
+public class PracticeFormWithCommentsTest extends TestBase {
 
     @Test
     void PractFormTest() {
