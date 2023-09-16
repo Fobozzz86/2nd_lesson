@@ -1,5 +1,6 @@
-package com.demoqa;
+package com.demoqa.tests;
 
+import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
@@ -8,17 +9,18 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormWithPageObjectsTest extends TestBase {
-
     @Test
-    void PractFormTest() {
-       open("https://demoqa.com/automation-practice-form");
-       executeJavaScript("$('#fixedban').remove()");
-       executeJavaScript("$('footer').remove()");
+    void successfulRegistrationTest() {
 
-       $("#firstName").setValue("Artem");
-       $("#lastName").setValue("Bulaev");
-       $("#userEmail").setValue("Fooolll@test.com");
-       $("[for=gender-radio-1]").click();
+       registrationPage.openPage()
+                       .setFirstName("Artem")
+                       .setLastName("Bulaev")
+                       .setUserEmail("Fooolll@test.com")
+                       .setGender(/*Male*/);
+ //                    .setGender("Other")
+
+
+
        $("#userNumber").setValue("89649990000");
        $("[id=dateOfBirthInput]").click();
        $(".react-datepicker__month-select").selectOption("March");
