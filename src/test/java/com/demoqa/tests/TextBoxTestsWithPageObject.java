@@ -6,17 +6,18 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTests extends TestBase {
+public class TextBoxTestsWithPageObject extends TestBase {
 
     @Test
     void successFillTest() {
-        open("https://demoqa.com/text-box");
-        //     $("[id=userName]").setValue("Artem");
-        $("#userName").setValue("Artem"); // - # это сокращение для id
-        $("#userEmail").setValue("Fooolll@test.com");
-        $("#currentAddress").setValue("Pnz");
+        registrationPage.openPage();
+
+        $("#userName").setValue("Artem");
+
+        registrationPage.setUserEmail("Fooolll@test.com")
+                        .setCurrentAddress("Penza");
         $("#permanentAddress").setValue("Russia");
-        $("#submit").click();
+        registrationPage.pushSubmitButton();;
 
         $("#output").shouldHave(text("Artem"), text("Fooolll@test.com"),
                 text("Pnz"), text("Russia"));
