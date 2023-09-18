@@ -1,18 +1,27 @@
 package com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.demoqa.pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
+import static java.lang.String.format;
 
 public class RegistrationPage {
     // SelenideElements / locators / etc
+
+    CalendarComponent calendarComponent = new CalendarComponent();
+
     SelenideElement formHeaderText = $(".practice-form-wrapper"),
                     firstNameInput = $("#firstName"),
                     lastNameInput = $("#lastName"),
                     userEmailInput = $("#userEmail"),
-                    genderInput = $("[for=gender-radio-1]");
+                    genderInput = $("[for=gender-radio-1]"),
 //                  genderInput = $("#genterWrapper");
+                    userNumberInput = $("#userNumber"),
+                    dateOfBirthInput = $("#dateOfBirthInput");
+
+//    ElementsCollection genderInputs = $$(".class"); // обращение к списку элементов
 
     // Actions
     public RegistrationPage openPage() {
@@ -45,5 +54,14 @@ public class RegistrationPage {
 //      genderInput.$(byText(value)).click();
 
         return this;
+    }
+    public RegistrationPage setUserNumber(String value) {
+        userNumberInput.setValue(value);
+
+        return this;
+    }
+    public void setBirthDate(String day, String month, String year) {
+        dateOfBirthInput.click();
+        calendarComponent.setDate(day, month, year);
     }
 }
