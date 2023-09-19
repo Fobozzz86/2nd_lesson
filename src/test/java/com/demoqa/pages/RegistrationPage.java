@@ -2,7 +2,9 @@ package com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponent;
+import com.demoqa.pages.components.ResultsModal;
 
+import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -12,6 +14,7 @@ public class RegistrationPage {
     // SelenideElements / locators / etc
 
     CalendarComponent calendarComponent = new CalendarComponent();
+    ResultsModal resultsModal = new ResultsModal();
 
     SelenideElement formHeaderText = $(".practice-form-wrapper"),
                     firstNameInput = $("#firstName"),
@@ -28,7 +31,9 @@ public class RegistrationPage {
                     stateInput = $("#state"),
                     cityInput = $("#city"),
                     stateCityInput = $("#stateCity-wrapper"),
-                    pushSubmit = $("#submit");
+                    pushSubmit = $("#submit"),
+                    buttonClose = $("#closeLargeModal");
+
 
 //    ElementsCollection genderInputs = $$(".class"); // обращение к списку элементов
 
@@ -102,6 +107,18 @@ public class RegistrationPage {
     }
     public RegistrationPage pushSubmitButton() {
         pushSubmit.click();
+        return this;
+    }
+    public RegistrationPage verifyRegistrationResultsModalAppears() {
+        resultsModal.verifyModalAppears();
+        return this;
+    }
+    public RegistrationPage verifyResult(String key, String value) {
+        resultsModal.verifyResult(key, value);
+        return this;
+    }
+    public RegistrationPage closeModal() {
+        buttonClose.scrollIntoView(true).click();
         return this;
     }
 

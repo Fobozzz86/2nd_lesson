@@ -2,6 +2,7 @@ package com.demoqa.tests;
 
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -15,7 +16,7 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
                        .setUserEmail("Fooolll@test.com")
                        .setGender(/*Male*/)
  //                    .setGender("Other")
-                       .setUserNumber("89649990000")
+                       .setUserNumber("8964999000")
                        .setBirthDate("30", "April", "1988")
                        .setSubject("math")
                        .setSubject("bio")
@@ -28,10 +29,19 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
                        .setCityInput("Delhi")
                        .pushSubmitButton();
 
+       // verifyModalAppears
 
-       $(".table-hover").shouldHave(text("Artem Bulaev"), text("Fooolll@test.com"),
-               text("Male"), text("8964999000"));
-//       $("#closeLargeModal").scrollIntoView(true).click(); // прокрутка для видимости кнопки
+        registrationPage.verifyRegistrationResultsModalAppears()
+                        .verifyResult("Student Name", "Artem Bulaev")
+                        .verifyResult("Student Email", "Fooolll@test.com")
+                        .verifyResult("Mobile", "8964999000")
+                        .verifyResult("Date of Birth", "30 March,1988")
+                        .verifyResult("Subjects", "Maths, Biology, Chemistry")
+                        .verifyResult("Hobbies", "Sports, Music")
+                        .verifyResult("Picture", "Test.jpg")
+                        .verifyResult("Address", "Penza")
+                        .verifyResult("State and City", "NCR Delhi")
+                        .closeModal();
 
     }
 }

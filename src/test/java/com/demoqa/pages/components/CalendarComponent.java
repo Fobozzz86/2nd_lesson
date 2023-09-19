@@ -9,10 +9,9 @@ public class CalendarComponent {
 
     // SelenideElements / locator / etc
        SelenideElement monthInput = $(".react-datepicker__month-select"),
-                    yearInput = $(".react-datepicker__year-select");
+                       yearInput = $(".react-datepicker__year-select");
 
     // Actions
-
     public void setDate(String day, String month, String year) {
 
         monthInput.selectOption(month);
