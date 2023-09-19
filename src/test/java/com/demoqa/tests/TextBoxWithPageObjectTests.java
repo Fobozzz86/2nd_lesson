@@ -4,9 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTestsWithPageObject extends TestBase {
+public class TextBoxWithPageObjectTests extends TestBase {
 
     @Test
     void successFillTest() {
@@ -17,7 +16,7 @@ public class TextBoxTestsWithPageObject extends TestBase {
         registrationPage.setUserEmail("Fooolll@test.com")
                         .setCurrentAddress("Penza");
         $("#permanentAddress").setValue("Russia");
-        registrationPage.pushSubmitButton();;
+        registrationPage.pushSubmitButton();
 
         $("#output").shouldHave(text("Artem"), text("Fooolll@test.com"),
                 text("Pnz"), text("Russia"));
