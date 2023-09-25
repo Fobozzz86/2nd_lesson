@@ -39,6 +39,7 @@ public class PracticeFormWithRandomUtilsTest extends TestBase {
         registrationPage.verifyRegistrationResultsModalAppears()
                         .verifyResult("Student Name", firstName + " " + lastName)
                         .verifyResult("Student Email", userEmail)
+                        .verifyResult("Gender", userGender)
                         .verifyResult("Mobile", userNumber)
                         .verifyResult("Date of Birth", "30 March,1988")
                         .verifyResult("Subjects", "Maths, Biology, Chemistry")
