@@ -7,6 +7,7 @@ import com.demoqa.pages.components.ResultsModal;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.demoqa.utils.RandomUtils.getRandomGender;
 
 public class RegistrationPage {
     // SelenideElements / locators / etc
@@ -18,8 +19,8 @@ public class RegistrationPage {
                     firstNameInput = $("#firstName"),
                     lastNameInput = $("#lastName"),
                     userEmailInput = $("#userEmail"),
-                    genderInput = $("[for=gender-radio-1]"),
-//                  genderInput = $("#genterWrapper");
+//                    genderInput = $("[for=gender-radio-1]"),
+                    genderInput = $("#genterWrapper"),
                     userNumberInput = $("#userNumber"),
                     dateOfBirthInput = $("#dateOfBirthInput"),
                     subjectInput = $("#subjectsInput"),
@@ -51,7 +52,7 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage setLastName(String value) {
-        lastNameInput.setValue(value);
+        lastNameInput.click();
 
         return this;
     }
@@ -60,10 +61,10 @@ public class RegistrationPage {
 
         return this;
     }
-    public RegistrationPage setGender() {
-        genderInput.click();
-//  public RegistrationPage setGender(String value) {
-//      genderInput.$(byText(value)).click();
+ //   public RegistrationPage setGender(String value) {
+ //       genderInput.click();
+ public RegistrationPage setGender(String value) {
+      genderInput.$(byText(value)).click();
 
         return this;
     }
