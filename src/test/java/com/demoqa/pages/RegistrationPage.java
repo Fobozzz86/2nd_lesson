@@ -19,7 +19,6 @@ public class RegistrationPage {
                     firstNameInput = $("#firstName"),
                     lastNameInput = $("#lastName"),
                     userEmailInput = $("#userEmail"),
-//                    genderInput = $("[for=gender-radio-1]"),
                     genderInput = $("#genterWrapper"),
                     userNumberInput = $("#userNumber"),
                     dateOfBirthInput = $("#dateOfBirthInput"),
@@ -46,19 +45,16 @@ public class RegistrationPage {
 
         return this;
     }
-        public RegistrationPage setFirstName(String value) {
+    public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
-
         return this;
     }
     public RegistrationPage setLastName(String value) {
-        lastNameInput.click();
-
+        lastNameInput.setValue(value);
         return this;
     }
     public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
-
         return this;
     }
  //   public RegistrationPage setGender(String value) {
