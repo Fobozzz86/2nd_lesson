@@ -6,8 +6,8 @@ import com.demoqa.pages.components.ResultsModal;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.demoqa.utils.RandomUtils.getRandomGender;
 
 public class RegistrationPage {
     // SelenideElements / locators / etc
@@ -78,12 +78,12 @@ public class RegistrationPage {
         subjectInput.setValue(value).pressEnter();
         return this;
     }
-    public RegistrationPage setHobbies(String value) {
-        hobbiesInput.$(byText(value)).click();
+    public RegistrationPage setHobbies(String string) {
+        hobbiesInput.$(byText(string)).click();
         return this;
     }
-    public RegistrationPage setUploadPicture() {
-        uploadPictureInput.uploadFromClasspath("img/Test.jpg");
+    public RegistrationPage setUploadPicture(String value) {
+        uploadPictureInput.uploadFromClasspath(value);
         return this;
     }
     public RegistrationPage setCurrentAddress(String value) {

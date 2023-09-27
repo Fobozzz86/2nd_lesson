@@ -18,7 +18,7 @@ public class CalendarComponent {
         yearInput.selectOption(year);
 //        $(".react-datepicker__day--0" + day).click();
 
-        String dayPickerLocator = format(".react-datepicker__day--0%s", day);
+        String dayPickerLocator = format(".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month)", day);
         $(dayPickerLocator).click();
     }
 

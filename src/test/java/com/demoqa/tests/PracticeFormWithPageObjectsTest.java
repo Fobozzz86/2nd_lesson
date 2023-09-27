@@ -19,7 +19,7 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
                        .setSubject("ch")
                        .setHobbies("Sports")
                        .setHobbies("Music")
-                       .setUploadPicture()
+                       .setUploadPicture("img/Test.jpg")
                        .setCurrentAddress("Penza")
                        .setStateInput("NCR")
                        .setCityInput("Delhi")

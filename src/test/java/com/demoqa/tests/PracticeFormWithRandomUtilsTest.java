@@ -1,8 +1,7 @@
 package com.demoqa.tests;
 
 import org.junit.jupiter.api.Test;
-
-import static com.demoqa.utils.RandomUtils.*;
+import static com.demoqa.utils.RandomUtilsTestData.*;
 
 public class PracticeFormWithRandomUtilsTest extends TestBase {
     @Test
@@ -20,7 +19,6 @@ public class PracticeFormWithRandomUtilsTest extends TestBase {
                        .setLastName(lastName)
                        .setUserEmail(userEmail)
                        .setGender(userGender)
- //                    .setGender("Other")
                        .setUserNumber(userNumber)
                        .setBirthDate("30", "April", "1988")
                        .setSubject("math")
@@ -28,7 +26,7 @@ public class PracticeFormWithRandomUtilsTest extends TestBase {
                        .setSubject("ch")
                        .setHobbies("Sports")
                        .setHobbies("Music")
-                       .setUploadPicture()
+                       .setUploadPicture("img/Test.jpg")
                        .setCurrentAddress("Penza")
                        .setStateInput("NCR")
                        .setCityInput("Delhi")
