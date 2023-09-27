@@ -3,7 +3,6 @@ package com.demoqa.pages.components;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.*;
-import static java.lang.String.format;
 
 public class CalendarComponent {
 
@@ -17,9 +16,13 @@ public class CalendarComponent {
         monthInput.selectOption(month);
         yearInput.selectOption(year);
 //        $(".react-datepicker__day--0" + day).click();
-
-        String dayPickerLocator = format(".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month)", day);
-        $(dayPickerLocator).click();
+        if (day.length() < 2) {
+            String dayPickerLocator = String.format(".react-datepicker__day--00%s:not(.react-datepicker__day--outside-month)", day);
+            $(dayPickerLocator).click();
+        } else {
+            String dayPickerLocator = String.format(".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month)", day);
+            $(dayPickerLocator).click();
+        }
     }
 
 }

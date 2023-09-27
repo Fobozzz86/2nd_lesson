@@ -10,7 +10,7 @@ public class RandomUtilsFakerTest {
              month = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November"},
             subjects = {"English", "Maths", "Chemistry", "Physics", "Computer Science", "Arts", "Biology"},
             hobbies = {"Sports", "Reading", "Music"},
-            picture = {"img/Test.jpg", "img/Test1.jpg"},
+            picture = {"img/test_0.jpg", "img/test_1.jpg"},
             state = {"Uttar Pradesh", "Haryana"},
             cityUttarPradesh = {"Agra", "Lucknow", "Merrut"},
             cityHaryana = {"Karnal", "Panipat"};
