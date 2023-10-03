@@ -55,14 +55,22 @@ public class RandomUtilsFakerTest {
          return faker.options().option(state);
  }
     public static String generateCity(String state) {
-    switch (state) {
+
+        if (state.equals("Uttar Pradesh")){
+            return faker.options().option(cityUttarPradesh);
+        } else if (state.equals("Haryana")){
+            return faker.options().option(cityHaryana);
+        }
+        else return null;
+
+ /*   switch (state) {
         case ("Uttar Pradesh"):
         return faker.options().option(cityUttarPradesh);
 
         case ("Haryana"):
         return faker.options().option(cityHaryana);
 }
-        return null;
+        return null;*/
  }
 
 }
