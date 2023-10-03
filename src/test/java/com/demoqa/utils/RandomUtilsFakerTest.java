@@ -7,7 +7,7 @@ public class RandomUtilsFakerTest {
 
     static String[]
             genders = {"Male", "Female", "Other"},
-             month = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November"},
+            month = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November"},
             subjects = {"English", "Maths", "Chemistry", "Physics", "Computer Science", "Arts", "Biology"},
             hobbies = {"Sports", "Reading", "Music"},
             picture = {"img/test_0.jpg", "img/test_1.jpg"},
@@ -64,6 +64,5 @@ public class RandomUtilsFakerTest {
 }
         return null;
  }
-
 
 }
